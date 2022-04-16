@@ -1,4 +1,5 @@
 import { IModalListInDto } from '@Interfaces';
+import { ITheme } from './ITheme';
 
 type ListType = IModalListInDto[];
 
@@ -9,4 +10,5 @@ export interface ISelectBoxProps {
 	disabled?: boolean;
 	renderSelectView?: (disabled: boolean, selected: IModalListInDto, showModal: () => void) => React.ReactElement
 	items: ListType;
+	theme: ITheme
 }

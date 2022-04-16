@@ -3,28 +3,27 @@ import * as React from 'react';
 import { View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
-import { SearchStyle } from '@Styles';
 import { ISearch } from '@Interfaces';
 
 export class SearchComponent extends React.PureComponent<ISearch, {}> {
 	public render(): JSX.Element {
-		const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled } = this.props;
+		const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
 		return (
-			<View style={SearchStyle.searchArea}>
+			<View style={theme.SearchStyle.searchArea}>
 				{
 					!backButtonDisabled &&
-						this.touchableOpacityButton(onBackRequest, require('../Assets/Images/left-arrow.png'), SearchStyle.leftBtn, SearchStyle.backButton)
+						this.touchableOpacityButton(onBackRequest, theme.Assets.LeftArrow, theme.SearchStyle.leftBtn, theme.SearchStyle.backButton)
 				}
 				<TextInput
 					placeholder={searchText}
 					placeholderTextColor={placeholderTextColor}
-					style={[SearchStyle.textInput, forceSelect && SearchStyle.nonCloseButton, backButtonDisabled && SearchStyle.nonBackButton]}
+					style={[theme.SearchStyle.textInput, forceSelect && theme.SearchStyle.nonCloseButton, backButtonDisabled && theme.SearchStyle.nonBackButton]}
 					underlineColorAndroid={'transparent'}
 					onChangeText={(text: string) => setText(text)}
 					{...SearchInputProps}
 				/>
 				{!forceSelect &&
-					this.touchableOpacityButton(onClose, require('../Assets/Images/close.png'), SearchStyle.leftBtn, SearchStyle.closeButton)
+					this.touchableOpacityButton(onClose, theme.Assets.Close, theme.SearchStyle.leftBtn, theme.SearchStyle.closeButton)
 
 				}
 			</View>

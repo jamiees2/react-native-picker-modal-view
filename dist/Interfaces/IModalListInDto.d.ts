@@ -1,15 +1,8 @@
+import { ITheme } from "./ITheme";
 export interface IModalListInDto<T = object> {
     Id: string | number;
     Name: string;
     Value: string | T;
     [key: string]: any;
-    CountryId?: ICity;
-    CityId?: ITown;
+    theme: ITheme;
 }
-interface ICity {
-    CountryId: string | number;
-}
-interface ITown {
-    CityId?: string | number;
-}
-export {};

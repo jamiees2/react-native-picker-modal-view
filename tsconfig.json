@@ -24,12 +24,6 @@
 			"@Interfaces/*": [
 				"src/Interfaces/*"
 			],
-			"@Styles": [
-				"src/Assets/Styles"
-			],
-			"@Styles/*": [
-				"src/Assets/Styles/*"
-			],
 			"@Enum": [
 				"src/Enum"
 			],
@@ -41,6 +35,12 @@
 			],
 			"@Helpers/*": [
 				"src/Helpers/*"
+			],
+			"@Themes": [
+				"src/Themes"
+			],
+			"@Themes/*": [
+				"src/Themes/*"
 			]
 		},
 		"lib": [

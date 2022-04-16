@@ -117,47 +117,5 @@ describe('Helper', () => {
 
 			expect(generateAlphabet(items)).toEqual(['B', 'F']);
 		});
-
-		it('should return Alphabet without sorting language with TR', () => {
-			const items = [
-				{
-					Id: 1,
-					Name: 'Öoo',
-					Value: 'Öoo',
-					key: 'Öoo'
-				},
-				{
-					Id: 2,
-					Name: 'Çar',
-					Value: 'Çar',
-					key: 'Çar'
-				}
-			];
-
-			const sortingLanguage = 'tr';
-			expect(generateAlphabet(items, sortingLanguage)).toEqual(['Ç', 'Ö']);
-		});
-
-		it('should compare turkish letter', () => {
-			const a = 'ö'
-			const b = 'o';
-
-			expect(trCompare(a, b)).toEqual(2);
-			expect(trCompare(b, a)).toEqual(-2);
-		});
-
-		it('should compare empty string', () => {
-			const a = ''
-			const b = '';
-
-			expect(trCompare(a, b)).toEqual(0);
-		});
-
-		it('should compare empty string', () => {
-			const a = 'a'
-			const b = 'a';
-
-			expect(trCompare(a, b)).toEqual(0);
-		});
 	})
 });

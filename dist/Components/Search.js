@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { View, TextInput, TouchableOpacity, Image } from 'react-native';
-import { SearchStyle } from '../Assets/Styles';
 export class SearchComponent extends React.PureComponent {
     render() {
-        const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled } = this.props;
-        return (React.createElement(View, { style: SearchStyle.searchArea },
+        const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
+        return (React.createElement(View, { style: theme.SearchStyle.searchArea },
             !backButtonDisabled &&
-                this.touchableOpacityButton(onBackRequest, require('../Assets/Images/left-arrow.png'), SearchStyle.leftBtn, SearchStyle.backButton),
-            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: placeholderTextColor, style: [SearchStyle.textInput, forceSelect && SearchStyle.nonCloseButton, backButtonDisabled && SearchStyle.nonBackButton], underlineColorAndroid: 'transparent', onChangeText: (text) => setText(text) }, SearchInputProps)),
+                this.touchableOpacityButton(onBackRequest, theme.Assets.LeftArrow, theme.SearchStyle.leftBtn, theme.SearchStyle.backButton),
+            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: placeholderTextColor, style: [theme.SearchStyle.textInput, forceSelect && theme.SearchStyle.nonCloseButton, backButtonDisabled && theme.SearchStyle.nonBackButton], underlineColorAndroid: 'transparent', onChangeText: (text) => setText(text) }, SearchInputProps)),
             !forceSelect &&
-                this.touchableOpacityButton(onClose, require('../Assets/Images/close.png'), SearchStyle.leftBtn, SearchStyle.closeButton)));
+                this.touchableOpacityButton(onClose, theme.Assets.Close, theme.SearchStyle.leftBtn, theme.SearchStyle.closeButton)));
     }
     touchableOpacityButton(onPress, imgSrc, buttonStyle, imgStyle) {
         return (React.createElement(TouchableOpacity, { onPress: () => onPress(), style: buttonStyle },

@@ -1,8 +1,7 @@
 /// <reference types="react" />
-import { FlatListProps, TextInputProps, ModalBaseProps, ModalPropsIOS, ModalPropsAndroid } from 'react-native';
+import { FlatListProps, TextInputProps, ModalProps, ColorValue } from 'react-native';
 import { AnimationTypeEnum } from '../Enum';
 import { IModalListInDto } from './';
-declare type ModalProps = ModalBaseProps | ModalPropsIOS | ModalPropsAndroid;
 declare type ListType = IModalListInDto[];
 export interface IModalProps {
     modalAnimationType?: AnimationTypeEnum;
@@ -12,10 +11,9 @@ export interface IModalProps {
     onSelected: (selected: IModalListInDto) => IModalListInDto;
     items: ListType;
     alphabeticalIndexChars?: string[];
-    searchInputTextColor?: string;
+    searchInputTextColor?: ColorValue;
     keyExtractor?: (key: any, index: number) => string;
     autoGenerateAlphabeticalIndex?: boolean;
-    sortingLanguage?: string;
     showToTopButton?: boolean;
     onEndReached: () => void;
     removeClippedSubviews: boolean;
@@ -32,6 +30,7 @@ export interface IModalProps {
     renderSelectView?: (disabled: boolean, selected: IModalListInDto, showModal: () => void) => React.ReactElement;
     backButtonDisabled?: boolean;
     renderSearch?: (onClose: () => void, onBack: () => void) => JSX.Element;
+    theme?: string;
 }
 export interface IModalState {
     modalVisible: boolean;

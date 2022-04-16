@@ -11,7 +11,6 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
         showAlphabeticalIndex: boolean;
         searchInputTextColor: string;
         autoGenerateAlphabeticalIndex: boolean;
-        sortingLanguage: string;
         removeClippedSubviews: boolean;
         selectPlaceholderText: string;
         searchPlaceholderText: string;
@@ -19,6 +18,7 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
         items: any[];
         disabled: boolean;
         requireSelection: boolean;
+        theme: string;
     };
     private viewabilityConfig;
     constructor(props: IModalProps);

@@ -6,3 +6,4 @@ export { IListItemInDto } from '@Interfaces/IListItemInDto';
 export { ISearch } from '@Interfaces/ISearchInDto';
 export { IScrollToTop } from '@Interfaces/IScrollToTopInDto';
 export { ISelectBoxProps } from '@Interfaces/ISelectBoxInDto';
+export { ITheme } from '@Interfaces/ITheme';

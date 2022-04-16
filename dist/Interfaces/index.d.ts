@@ -5,3 +5,4 @@ export { IListItemInDto } from './IListItemInDto';
 export { ISearch } from './ISearchInDto';
 export { IScrollToTop } from './IScrollToTopInDto';
 export { ISelectBoxProps } from './ISelectBoxInDto';
+export { ITheme } from './ITheme';

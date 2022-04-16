@@ -1,6 +1,7 @@
-import { TextInputProps } from 'react-native';
+import { ColorValue, TextInputProps } from 'react-native';
+import { ITheme } from './ITheme';
 export interface ISearch {
-    placeholderTextColor: string;
+    placeholderTextColor: ColorValue;
     onClose: () => void;
     onBackRequest?: () => void;
     forceSelect: boolean;
@@ -8,4 +9,5 @@ export interface ISearch {
     searchText: string;
     SearchInputProps?: TextInputProps;
     backButtonDisabled?: boolean;
+    theme: ITheme;
 }
