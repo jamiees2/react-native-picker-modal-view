@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { FlatListProps, TextInputProps, ModalProps, ColorValue } from 'react-native';
+import { FlatListProps, TextInputProps, ModalProps } from 'react-native';
 import { AnimationTypeEnum } from '../Enum';
 import { IModalListInDto } from './';
 declare type ListType = IModalListInDto[];
@@ -11,7 +11,6 @@ export interface IModalProps {
     onSelected: (selected: IModalListInDto) => IModalListInDto;
     items: ListType;
     alphabeticalIndexChars?: string[];
-    searchInputTextColor?: ColorValue;
     keyExtractor?: (key: any, index: number) => string;
     autoGenerateAlphabeticalIndex?: boolean;
     showToTopButton?: boolean;

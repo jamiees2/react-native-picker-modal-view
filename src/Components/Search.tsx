@@ -7,7 +7,7 @@ import { ISearch } from '@Interfaces';
 
 export class SearchComponent extends React.PureComponent<ISearch, {}> {
 	public render(): JSX.Element {
-		const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
+		const { SearchInputProps, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
 		return (
 			<View style={theme.SearchStyle.searchArea}>
 				{
@@ -16,7 +16,7 @@ export class SearchComponent extends React.PureComponent<ISearch, {}> {
 				}
 				<TextInput
 					placeholder={searchText}
-					placeholderTextColor={placeholderTextColor}
+					placeholderTextColor={theme.SearchStyle.placeHolderText.color}
 					style={[theme.SearchStyle.textInput, forceSelect && theme.SearchStyle.nonCloseButton, backButtonDisabled && theme.SearchStyle.nonBackButton]}
 					underlineColorAndroid={'transparent'}
 					onChangeText={(text: string) => setText(text)}

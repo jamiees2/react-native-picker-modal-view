@@ -2,11 +2,11 @@ import * as React from 'react';
 import { View, TextInput, TouchableOpacity, Image } from 'react-native';
 export class SearchComponent extends React.PureComponent {
     render() {
-        const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
+        const { SearchInputProps, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
         return (React.createElement(View, { style: theme.SearchStyle.searchArea },
             !backButtonDisabled &&
                 this.touchableOpacityButton(onBackRequest, theme.Assets.LeftArrow, theme.SearchStyle.leftBtn, theme.SearchStyle.backButton),
-            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: placeholderTextColor, style: [theme.SearchStyle.textInput, forceSelect && theme.SearchStyle.nonCloseButton, backButtonDisabled && theme.SearchStyle.nonBackButton], underlineColorAndroid: 'transparent', onChangeText: (text) => setText(text) }, SearchInputProps)),
+            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: theme.SearchStyle.placeHolderText.color, style: [theme.SearchStyle.textInput, forceSelect && theme.SearchStyle.nonCloseButton, backButtonDisabled && theme.SearchStyle.nonBackButton], underlineColorAndroid: 'transparent', onChangeText: (text) => setText(text) }, SearchInputProps)),
             !forceSelect &&
                 this.touchableOpacityButton(onClose, theme.Assets.Close, theme.SearchStyle.leftBtn, theme.SearchStyle.closeButton)));
     }

@@ -1,4 +1,4 @@
-import { ImageSourcePropType, ImageStyle, TextStyle, ViewStyle } from "react-native";
+import { ColorValue, ImageSourcePropType, ImageStyle, TextStyle, ViewStyle } from "react-native";
 interface Assets {
     Close: ImageSourcePropType;
     Down: ImageSourcePropType;
@@ -30,11 +30,15 @@ interface SearchStyle {
     nonBackButton: ViewStyle;
     leftBtn: ViewStyle;
     rightBtn: ViewStyle;
+    placeHolderText: {
+        color: ColorValue;
+    };
 }
 interface ListItemStyle {
     container: ViewStyle;
     btnContainer: ViewStyle;
     selected: TextStyle;
+    itemText: TextStyle;
 }
 interface AlphabetStyle {
     container: ViewStyle;

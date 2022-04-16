@@ -5,7 +5,7 @@ export class ListItemComponent extends React.PureComponent {
         const { onSelectMethod, defaultSelected, theme, list: { Name } } = this.props;
         return (React.createElement(TouchableOpacity, { style: theme.ListItemStyle.container, activeOpacity: 0.7, onPress: () => onSelectMethod(this.props.list) },
             React.createElement(View, { style: theme.ListItemStyle.btnContainer },
-                React.createElement(Text, { style: [(defaultSelected && Name === defaultSelected.Name) && theme.ListItemStyle.selected] }, Name))));
+                React.createElement(Text, { style: [theme.ListItemStyle.itemText, (defaultSelected && Name === defaultSelected.Name) && theme.ListItemStyle.selected] }, Name))));
     }
 }
 //# sourceMappingURL=ListItem.js.map

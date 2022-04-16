@@ -20,7 +20,6 @@ export interface IModalProps {
 	onSelected: (selected: IModalListInDto) => IModalListInDto;
 	items: ListType;
 	alphabeticalIndexChars?: string[];
-	searchInputTextColor?: ColorValue;
 	keyExtractor?: (key: any, index: number) => string;
 	autoGenerateAlphabeticalIndex?: boolean;
 	showToTopButton?: boolean;

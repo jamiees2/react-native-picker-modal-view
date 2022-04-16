@@ -23,7 +23,6 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		showToTopButton: true, 
 		modalAnimationType: 'slide', 
 		showAlphabeticalIndex: false, 
-		searchInputTextColor: '#252525', 
 		autoGenerateAlphabeticalIndex: false, 
 		removeClippedSubviews: false, 
 		selectPlaceholderText: 'Choose one...', 
@@ -86,7 +85,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 	}
 
 	public render(): JSX.Element {
-		const { autoSort, modalAnimationType, theme: themeName, showAlphabeticalIndex, searchInputTextColor, keyExtractor, showToTopButton, onEndReached, removeClippedSubviews, FlatListProps, selectPlaceholderText, searchPlaceholderText, SearchInputProps, selected, disabled, items, requireSelection, renderSelectView, ModalProps, backButtonDisabled, renderSearch } = this.props;
+		const { autoSort, modalAnimationType, theme: themeName, showAlphabeticalIndex, keyExtractor, showToTopButton, onEndReached, removeClippedSubviews, FlatListProps, selectPlaceholderText, searchPlaceholderText, SearchInputProps, selected, disabled, items, requireSelection, renderSelectView, ModalProps, backButtonDisabled, renderSearch } = this.props;
 
 		const { modalVisible, alphabeticalIndexChars, stickyBottomButton, selectedAlpha, selectedObject, searchText } = this.state;
 
@@ -117,7 +116,6 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 								) : (
 								<SearchComponent
 									searchText={searchPlaceholderText}
-									placeholderTextColor={searchInputTextColor}
 									onClose={this.onClose.bind(this)}
 									onBackRequest={this.onBackRequest.bind(this)}
 									forceSelect={requireSelection}

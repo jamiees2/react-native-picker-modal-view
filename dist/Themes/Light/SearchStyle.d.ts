@@ -1,4 +1,4 @@
-import { ViewStyle, ImageStyle } from 'react-native';
+import { ViewStyle, ImageStyle, ColorValue } from 'react-native';
 export declare const SearchStyle: {
     closeButton: ImageStyle;
     backButton: ImageStyle;
@@ -8,4 +8,7 @@ export declare const SearchStyle: {
     nonBackButton: ViewStyle;
     leftBtn: ViewStyle;
     rightBtn: ViewStyle;
+    placeHolderText: {
+        color: ColorValue;
+    };
 };

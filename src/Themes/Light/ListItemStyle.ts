@@ -22,4 +22,5 @@ export const ListItemStyle = StyleSheet.create({
 		color: '#000',
 		fontWeight: 'bold',
 	} as TextStyle,
+	itemText: {} as TextStyle,
 });

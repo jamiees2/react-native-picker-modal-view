@@ -9,7 +9,6 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
         showToTopButton: boolean;
         modalAnimationType: string;
         showAlphabeticalIndex: boolean;
-        searchInputTextColor: string;
         autoGenerateAlphabeticalIndex: boolean;
         removeClippedSubviews: boolean;
         selectPlaceholderText: string;

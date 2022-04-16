@@ -37,5 +37,8 @@ export const SearchStyle = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 20,
     },
+    placeHolderText: {
+        color: "#252525"
+    },
 });
 //# sourceMappingURL=SearchStyle.js.map

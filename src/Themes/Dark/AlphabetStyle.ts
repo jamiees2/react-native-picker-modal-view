@@ -15,6 +15,7 @@ export const AlphabetStyle = StyleSheet.create({
 		paddingHorizontal: 5,
 	} as ViewStyle,
 	alphabetText: {
+		color: "#fff",
 		fontSize: 10,
 		textAlign: 'center',
 	} as TextStyle,

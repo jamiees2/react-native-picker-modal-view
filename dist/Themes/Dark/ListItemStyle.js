@@ -5,6 +5,7 @@ export const ListItemStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         height: CommonStyle.BTN_HEIGHT,
+        color: '#fff',
     },
     btnContainer: {
         flex: 1,
@@ -17,6 +18,9 @@ export const ListItemStyle = StyleSheet.create({
     selected: {
         color: '#fff',
         fontWeight: 'bold',
+    },
+    itemText: {
+        color: '#fff'
     },
 });
 //# sourceMappingURL=ListItemStyle.js.map

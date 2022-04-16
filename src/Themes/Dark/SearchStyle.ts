@@ -1,5 +1,5 @@
 // Global Imports
-import { StyleSheet, ViewStyle, ImageStyle, Platform, NativeModules } from 'react-native';
+import { StyleSheet, ViewStyle, ImageStyle, Platform, NativeModules, ColorValue } from 'react-native';
 
 // const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : NativeModules.StatusBarManager.HEIGHT;
 
@@ -41,4 +41,7 @@ export const SearchStyle = StyleSheet.create({
 		paddingVertical: 20,
 		paddingHorizontal: 20,
 	} as ViewStyle,
+	placeHolderText: {
+		color: "#dadada" as ColorValue
+	},
 });

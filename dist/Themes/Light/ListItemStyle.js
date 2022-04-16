@@ -18,5 +18,6 @@ export const ListItemStyle = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold',
     },
+    itemText: {},
 });
 //# sourceMappingURL=ListItemStyle.js.map

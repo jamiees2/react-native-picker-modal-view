@@ -10,6 +10,7 @@ export const AlphabetStyle = StyleSheet.create({
         paddingHorizontal: 5,
     },
     alphabetText: {
+        color: "#fff",
         fontSize: 10,
         textAlign: 'center',
     },

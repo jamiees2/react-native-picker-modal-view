@@ -3,4 +3,5 @@ export declare const ListItemStyle: {
     container: ViewStyle;
     btnContainer: ViewStyle;
     selected: TextStyle;
+    itemText: TextStyle;
 };
