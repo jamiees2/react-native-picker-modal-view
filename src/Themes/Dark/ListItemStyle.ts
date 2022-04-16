@@ -9,6 +9,7 @@ export const ListItemStyle = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'column',
 		height: CommonStyle.BTN_HEIGHT,
+		color: '#fff',
 	} as ViewStyle,
 	btnContainer: {
 		flex: 1,

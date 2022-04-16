@@ -19,7 +19,7 @@ export const ListItemStyle = StyleSheet.create({
 		borderBottomColor: 'rgba(0,0,0,.05)',
 	} as ViewStyle,
 	selected: {
-    color: '#000',
+		color: '#000',
 		fontWeight: 'bold',
 	} as TextStyle,
 });
