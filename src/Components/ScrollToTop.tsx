@@ -4,8 +4,9 @@ import { TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
 import { IScrollToTop } from '@Interfaces';
+import { ThemeProps } from './ITheme';
 
-export class ScrollToTopComponent extends React.PureComponent<IScrollToTop, {}> {
+export class ScrollToTopComponent extends React.PureComponent<IScrollToTop & ThemeProps, {}> {
 	public render(): JSX.Element {
 		const { goToUp, stickyBottomButton, theme} = this.props;
 		if (stickyBottomButton) {

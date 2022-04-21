@@ -4,8 +4,9 @@ import { View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
 import { ISearch } from '@Interfaces';
+import { ThemeProps } from './ITheme';
 
-export class SearchComponent extends React.PureComponent<ISearch, {}> {
+export class SearchComponent extends React.PureComponent<ISearch & ThemeProps, {}> {
 	public render(): JSX.Element {
 		const { SearchInputProps, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
 		return (

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IAlphabetsInDto } from '../Interfaces';
-export declare class AlphabetComponent extends React.PureComponent<IAlphabetsInDto, {}> {
+import { ThemeProps } from './ITheme';
+export declare class AlphabetComponent extends React.PureComponent<IAlphabetsInDto & ThemeProps, {}> {
     static defaultProps: {
         alphabets: string[];
     };

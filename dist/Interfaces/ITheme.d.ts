@@ -61,4 +61,7 @@ export interface ITheme {
     CommonStyle: CommonStyle;
     Assets: Assets;
 }
+export interface ThemeProps {
+    theme: ITheme;
+}
 export {};

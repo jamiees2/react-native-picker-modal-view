@@ -1,5 +1,4 @@
 import { TextInputProps } from 'react-native';
-import { ITheme } from './ITheme';
 export interface ISearch {
     onClose: () => void;
     onBackRequest?: () => void;
@@ -8,5 +7,4 @@ export interface ISearch {
     searchText: string;
     SearchInputProps?: TextInputProps;
     backButtonDisabled?: boolean;
-    theme: ITheme;
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IListItemInDto } from '../Interfaces';
-export declare class ListItemComponent extends React.PureComponent<IListItemInDto, {}> {
+import { ThemeProps } from './ITheme';
+export declare class ListItemComponent extends React.PureComponent<IListItemInDto & ThemeProps, {}> {
     render(): JSX.Element;
 }

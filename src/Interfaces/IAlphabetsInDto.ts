@@ -4,7 +4,6 @@ export interface IAlphabetsInDto {
 	alphabets: string[];
 	showAlphabeticalIndex: boolean;
 	selectedAlpha?: string;
-	theme: ITheme
 
 	setAlphabet: (alphabet: string) => void;
 }

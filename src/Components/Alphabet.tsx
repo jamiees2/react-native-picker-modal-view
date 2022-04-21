@@ -4,8 +4,9 @@ import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 
 // Local Imports
 import { IAlphabetsInDto } from '@Interfaces';
+import { ThemeProps } from './ITheme';
 
-export class AlphabetComponent extends React.PureComponent<IAlphabetsInDto, {}> {
+export class AlphabetComponent extends React.PureComponent<IAlphabetsInDto & ThemeProps, {}> {
 
 	public static defaultProps = {
 		// tslint:disable-next-line: max-line-length

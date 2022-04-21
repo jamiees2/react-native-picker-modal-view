@@ -10,5 +10,4 @@ export interface ISelectBoxProps {
 	disabled?: boolean;
 	renderSelectView?: (disabled: boolean, selected: IModalListInDto, showModal: () => void) => React.ReactElement
 	items: ListType;
-	theme: ITheme
 }

@@ -4,8 +4,9 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
 import { ISelectBoxProps } from '@Interfaces';
+import { ThemeProps } from './ITheme';
 
-export class SelectBoxComponent extends React.PureComponent<ISelectBoxProps, {}> {
+export class SelectBoxComponent extends React.PureComponent<ISelectBoxProps & ThemeProps, {}> {
 	public render(): JSX.Element {
 		const { openModal, selectedObject, chooseText, disabled, renderSelectView, items, theme } = this.props;
 		const selectViewIsDisabled = (disabled || !items || items.length === 0);

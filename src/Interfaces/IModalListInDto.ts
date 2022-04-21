@@ -5,5 +5,4 @@ export interface IModalListInDto<T = object> {
 	Name: string;
 	Value: string | T;
 	[key: string]: any;
-	theme: ITheme
 }

@@ -4,8 +4,9 @@ import { Text, View, TouchableOpacity } from 'react-native';
 
 // Local Import
 import { IListItemInDto } from '@Interfaces';
+import { ThemeProps } from './ITheme';
 
-export class ListItemComponent extends React.PureComponent<IListItemInDto, {}> {
+export class ListItemComponent extends React.PureComponent<IListItemInDto & ThemeProps, {}> {
 	public render(): JSX.Element {
 		const { onSelectMethod, defaultSelected, theme, list: { Name } } = this.props;
 		return (
