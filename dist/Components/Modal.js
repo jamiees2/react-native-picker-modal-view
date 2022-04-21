@@ -50,12 +50,14 @@ export class ModalComponent extends React.PureComponent {
             });
         }
     }
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        const { open, setOpen } = this.props;
-        const { modalVisible } = this.state;
-        if ((open !== null && open !== void 0 ? open : null !== null) && (setOpen !== null && setOpen !== void 0 ? setOpen : null !== null) && open !== modalVisible) {
-            setOpen(modalVisible);
+    _setOpen(open) {
+        const { setOpen } = this.props;
+        if ((setOpen !== null && setOpen !== void 0 ? setOpen : null) !== null) {
+            setOpen(open);
         }
+        this.setState({
+            modalVisible: open,
+        });
     }
     _openModal() {
         const { items, autoGenerateAlphabeticalIndex, disabled } = this.props;
@@ -63,9 +65,7 @@ export class ModalComponent extends React.PureComponent {
             this.setState({ alphabeticalIndexChars: generateAlphabet(items) });
         }
         if (items.length > 0 && !disabled) {
-            this.setState({
-                modalVisible: true,
-            });
+            this._setOpen(true);
         }
     }
     openModal() {
@@ -100,7 +100,7 @@ export class ModalComponent extends React.PureComponent {
     }
     _onClose() {
         const { onClosed, onSelected, requireSelection, selected } = this.props;
-        const { modalVisible, selectedObject } = this.state;
+        const { selectedObject } = this.state;
         if (requireSelection && (selectedObject && ![selectedObject.Id]) && (selected && ![selected.Id]))
             return;
         if (!requireSelection) {
@@ -108,8 +108,8 @@ export class ModalComponent extends React.PureComponent {
         }
         this.setState({
             selectedObject: {},
-            modalVisible: !modalVisible,
         });
+        this._setOpen(false);
         this.clearComponent();
         if (onClosed) {
             onClosed();
@@ -120,10 +120,7 @@ export class ModalComponent extends React.PureComponent {
     }
     _onBackRequest() {
         const { onBackButtonPressed } = this.props;
-        const { modalVisible } = this.state;
-        this.setState({
-            modalVisible: !modalVisible,
-        });
+        this._setOpen(false);
         this.clearComponent();
         if (onBackButtonPressed) {
             onBackButtonPressed();
@@ -182,9 +179,9 @@ export class ModalComponent extends React.PureComponent {
     _onSelectMethod(key) {
         const { onSelected } = this.props;
         this.setState({
-            modalVisible: false,
             selectedObject: key,
         });
+        this._setOpen(false);
         this.clearComponent();
         if (key && ![key.Id]) {
             return onSelected({});

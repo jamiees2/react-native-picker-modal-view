@@ -79,12 +79,14 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		}
 	}
 
-	public componentDidUpdate(prevProps: Readonly<IModalProps>, prevState: Readonly<IModalState>, snapshot?: any): void {
-		const { open, setOpen } = this.props;
-		const { modalVisible } = this.state;
-		if ((open ?? null !== null) && (setOpen ?? null !== null) && open !== modalVisible) {
-			setOpen(modalVisible);
+	private _setOpen(open: boolean): void {
+		const {setOpen} = this.props;
+		if ((setOpen ?? null) !== null) {
+			setOpen(open)
 		}
+		this.setState({
+			modalVisible: open,
+		});
 	}
 
 	private _openModal(): void {
@@ -94,9 +96,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		}
 
 		if (items.length > 0 && !disabled) {
-			this.setState({
-				modalVisible: true,
-			});
+			this._setOpen(true)
 		}
 	}
 
@@ -200,7 +200,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 	private _onClose(): void {
 		const { onClosed, onSelected, requireSelection, selected } = this.props;
-		const { modalVisible, selectedObject } = this.state;
+		const { selectedObject } = this.state;
 
 		if (requireSelection && (selectedObject && ![selectedObject.Id]) && (selected && ![selected.Id])) return;
 
@@ -210,8 +210,8 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 		this.setState({
 			selectedObject: {} as IModalListInDto,
-			modalVisible: !modalVisible,
 		});
+		this._setOpen(false);
 		this.clearComponent();
 		if (onClosed) {
 			onClosed();
@@ -224,10 +224,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 	private _onBackRequest(): void {
 		const { onBackButtonPressed } = this.props;
-		const { modalVisible } = this.state;
-		this.setState({
-			modalVisible: !modalVisible,
-		});
+		this._setOpen(false);
 
 		this.clearComponent();
 		if (onBackButtonPressed) {
@@ -311,9 +308,9 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 	private _onSelectMethod(key: IModalListInDto): IModalListInDto | void {
 		const { onSelected } = this.props;
 		this.setState({
-			modalVisible: false,
 			selectedObject: key as IModalListInDto,
 		});
+		this._setOpen(false);
 		this.clearComponent();
 
 		if (key && ![key.Id]) {

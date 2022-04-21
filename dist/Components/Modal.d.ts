@@ -27,7 +27,7 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
     private _clearComponent;
     clearComponent(): void;
     componentDidMount(): void;
-    componentDidUpdate(prevProps: Readonly<IModalProps>, prevState: Readonly<IModalState>, snapshot?: any): void;
+    private _setOpen;
     private _openModal;
     openModal(): void;
     render(): JSX.Element;
