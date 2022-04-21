@@ -31,9 +31,21 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		items: [], 
 		disabled: false, 
 		requireSelection: false,
+		open: null,
+		setOpen: null,
 		theme: Themes.default,
 	};
 	private viewabilityConfig: { minimumViewTime: number; waitForInteraction: boolean; viewAreaCoveragePercentThreshold: number; };
+
+	static getDerivedStateFromProps(props: Readonly<IModalProps>, state: Readonly<IModalState>): IModalState | null {
+		if ((props.open ?? null !== null) && state.modalVisible !== props.open) {
+			return {
+				...state,
+				modalVisible: props.open
+			}
+		}
+		return null
+	}
 
 	constructor(props: IModalProps) {
 		super(props);
@@ -64,6 +76,14 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 			this.setState({
 				alphabeticalIndexChars,
 			});
+		}
+	}
+
+	public componentDidUpdate(prevProps: Readonly<IModalProps>, prevState: Readonly<IModalState>, snapshot?: any): void {
+		const { open, setOpen } = this.props;
+		const { modalVisible } = this.state;
+		if ((open ?? null !== null) && (setOpen ?? null !== null) && open !== modalVisible) {
+			setOpen(modalVisible);
 		}
 	}
 

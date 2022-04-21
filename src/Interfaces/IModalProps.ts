@@ -9,6 +9,7 @@ import {
 // Local Imports
 import { AnimationTypeEnum } from '@Enum';
 import { IModalListInDto } from '@Interfaces';
+import React from 'react';
 
 type ListType = IModalListInDto[];
 
@@ -39,6 +40,8 @@ export interface IModalProps {
 	backButtonDisabled?: boolean,
 	renderSearch?: (onClose: () => void, onBack: () => void ) =>  JSX.Element,
 	theme?: string,
+	open?: boolean,
+	setOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IModalState {
