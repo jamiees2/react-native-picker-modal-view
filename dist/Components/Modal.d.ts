@@ -17,13 +17,17 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
         items: any[];
         disabled: boolean;
         requireSelection: boolean;
+        open: any;
+        setOpen: any;
         theme: string;
     };
     private viewabilityConfig;
+    static getDerivedStateFromProps(props: Readonly<IModalProps>, state: Readonly<IModalState>): IModalState | null;
     constructor(props: IModalProps);
     private _clearComponent;
     clearComponent(): void;
     componentDidMount(): void;
+    componentDidUpdate(prevProps: Readonly<IModalProps>, prevState: Readonly<IModalState>, snapshot?: any): void;
     private _openModal;
     openModal(): void;
     render(): JSX.Element;

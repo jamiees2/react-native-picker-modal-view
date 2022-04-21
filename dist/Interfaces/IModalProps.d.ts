@@ -1,7 +1,7 @@
-/// <reference types="react" />
 import { FlatListProps, TextInputProps, ModalProps } from 'react-native';
 import { AnimationTypeEnum } from '../Enum';
 import { IModalListInDto } from './';
+import React from 'react';
 declare type ListType = IModalListInDto[];
 export interface IModalProps {
     modalAnimationType?: AnimationTypeEnum;
@@ -30,6 +30,8 @@ export interface IModalProps {
     backButtonDisabled?: boolean;
     renderSearch?: (onClose: () => void, onBack: () => void) => JSX.Element;
     theme?: string;
+    open?: boolean;
+    setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export interface IModalState {
     modalVisible: boolean;

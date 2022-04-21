@@ -22,6 +22,13 @@ export class ModalComponent extends React.PureComponent {
             viewAreaCoveragePercentThreshold: 95
         };
     }
+    static getDerivedStateFromProps(props, state) {
+        var _a;
+        if (((_a = props.open) !== null && _a !== void 0 ? _a : null !== null) && state.modalVisible !== props.open) {
+            return Object.assign(Object.assign({}, state), { modalVisible: props.open });
+        }
+        return null;
+    }
     _clearComponent() {
         this.setState({
             stickyBottomButton: false,
@@ -41,6 +48,13 @@ export class ModalComponent extends React.PureComponent {
             this.setState({
                 alphabeticalIndexChars,
             });
+        }
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const { open, setOpen } = this.props;
+        const { modalVisible } = this.state;
+        if ((open !== null && open !== void 0 ? open : null !== null) && (setOpen !== null && setOpen !== void 0 ? setOpen : null !== null) && open !== modalVisible) {
+            setOpen(modalVisible);
         }
     }
     _openModal() {
@@ -212,6 +226,8 @@ ModalComponent.defaultProps = {
     items: [],
     disabled: false,
     requireSelection: false,
+    open: null,
+    setOpen: null,
     theme: Themes.default,
 };
 //# sourceMappingURL=Modal.js.map
