@@ -40,8 +40,11 @@ export class ModalComponent extends React.PureComponent {
         this._clearComponent();
     }
     componentDidMount() {
-        const { autoGenerateAlphabeticalIndex, alphabeticalIndexChars, items } = this.props;
-        if (autoGenerateAlphabeticalIndex) {
+        const { autoGenerateAlphabeticalIndex, alphabeticalIndexChars, indexGenerator, items } = this.props;
+        if (indexGenerator) {
+            this.setState({ alphabeticalIndexChars: indexGenerator(items) });
+        }
+        else if (autoGenerateAlphabeticalIndex) {
             this.setState({ alphabeticalIndexChars: generateAlphabet(items) });
         }
         else if (alphabeticalIndexChars) {
