@@ -6,6 +6,7 @@ type ListType = IModalListInDto[];
 export interface IModalProps {
     modalAnimationType?: AnimationTypeEnum;
     showAlphabeticalIndex: boolean;
+    indexGenerator?: (items: ListType) => string[];
     onClosed: () => void;
     onBackButtonPressed?: () => void;
     onSelected: (selected: IModalListInDto) => IModalListInDto;
