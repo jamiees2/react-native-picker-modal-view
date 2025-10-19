@@ -1,5 +1,3 @@
-import { ITheme } from "./ITheme";
-
 export interface IScrollToTop {
 	stickyBottomButton: boolean;
 

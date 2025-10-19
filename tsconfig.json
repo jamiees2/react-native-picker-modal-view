@@ -1,47 +1,10 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
-		"rootDirs": [
-			"src/**",
-			"src/Components",
-			"src/Interfaces",
-			"src/Assets",
-			"src/Assets/Styles",
-			"src/Assets/Images",
-			"src/Enum"
-		],
+		"baseUrl": "./src",
+		"rootDir": "./src",
 		"importHelpers": true,
 		"paths": {
-			"@Components": [
-				"src/Components"
-			],
-			"@Components/*": [
-				"src/Components/*"
-			],
-			"@Interfaces": [
-				"src/Interfaces"
-			],
-			"@Interfaces/*": [
-				"src/Interfaces/*"
-			],
-			"@Enum": [
-				"src/Enum"
-			],
-			"@Enum/*": [
-				"src/Enum/*"
-			],
-			"@Helpers": [
-				"src/Helpers"
-			],
-			"@Helpers/*": [
-				"src/Helpers/*"
-			],
-			"@Themes": [
-				"src/Themes"
-			],
-			"@Themes/*": [
-				"src/Themes/*"
-			]
+			"*": ["*"]
 		},
 		"lib": [
 			"es2016",

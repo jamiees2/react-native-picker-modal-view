@@ -1,5 +1,5 @@
-import * as Light from "@Themes/Light"
-import * as Dark from "@Themes/Dark"
+import * as Light from "./Light"
+import * as Dark from "./Dark"
    
 export default {
     default: 'light',

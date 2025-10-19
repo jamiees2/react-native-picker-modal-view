@@ -1,9 +1,20 @@
 import * as React from 'react';
 import { Modal, View, FlatList, KeyboardAvoidingView, Platform, SafeAreaView, TouchableOpacity } from 'react-native';
-import { AlphabetComponent, ListItemComponent, SearchComponent, ScrollToTopComponent, SelectBoxComponent } from './';
+import { AlphabetComponent } from './Alphabet';
+import { ListItemComponent } from './ListItem';
+import { SearchComponent } from './Search';
+import { ScrollToTopComponent } from './ScrollToTop';
+import { SelectBoxComponent } from './SelectBox';
 import Themes from '../Themes';
 import { generateAlphabet, getFilteredData, getIndex } from '../Helpers';
 export class ModalComponent extends React.PureComponent {
+    static getDerivedStateFromProps(props, state) {
+        var _a;
+        if (((_a = props.open) !== null && _a !== void 0 ? _a : null !== null) && state.modalVisible !== props.open) {
+            return Object.assign(Object.assign({}, state), { modalVisible: props.open });
+        }
+        return null;
+    }
     constructor(props) {
         super(props);
         this.flatListRef = null;
@@ -21,13 +32,6 @@ export class ModalComponent extends React.PureComponent {
             waitForInteraction: true,
             viewAreaCoveragePercentThreshold: 95
         };
-    }
-    static getDerivedStateFromProps(props, state) {
-        var _a;
-        if (((_a = props.open) !== null && _a !== void 0 ? _a : null !== null) && state.modalVisible !== props.open) {
-            return Object.assign(Object.assign({}, state), { modalVisible: props.open });
-        }
-        return null;
     }
     _clearComponent() {
         this.setState({
@@ -82,7 +86,7 @@ export class ModalComponent extends React.PureComponent {
                     renderSearch ? renderSearch(this.onClose.bind(this), this.onBackRequest.bind(this)) : (React.createElement(SearchComponent, Object.assign({ searchText: searchPlaceholderText, onClose: this.onClose.bind(this), onBackRequest: this.onBackRequest.bind(this), forceSelect: requireSelection, setText: (text) => this.setText(text), backButtonDisabled: backButtonDisabled, theme: theme }, SearchInputProps))),
                     React.createElement(KeyboardAvoidingView, { style: theme.ModalStyles.keyboardContainer, behavior: Platform.OS === 'ios' ? 'padding' : null, enabled: true },
                         React.createElement(View, { style: theme.ModalStyles.listArea },
-                            React.createElement(FlatList, Object.assign({ ref: (ref) => this.flatListRef = ref, keyExtractor: keyExtractor ? keyExtractor : (item, index) => index.toString(), data: getFilteredData(items, autoSort, searchText), renderItem: ({ item, index }) => this.renderItem(item, index), onScroll: showToTopButton && this.onScrolling.bind(this), initialNumToRender: this.numToRender, keyboardShouldPersistTaps: 'always', keyboardDismissMode: 'interactive', onEndReached: onEndReached, maxToRenderPerBatch: 20, legacyImplementation: false, updateCellsBatchingPeriod: 50, removeClippedSubviews: removeClippedSubviews, viewabilityConfig: this.viewabilityConfig, getItemLayout: (_, index) => ({
+                            React.createElement(FlatList, Object.assign({ ref: (ref) => { this.flatListRef = ref; }, keyExtractor: keyExtractor ? keyExtractor : (item, index) => index.toString(), data: getFilteredData(items, autoSort, searchText), renderItem: ({ item, index }) => this.renderItem(item, index), onScroll: showToTopButton && this.onScrolling.bind(this), initialNumToRender: this.numToRender, keyboardShouldPersistTaps: 'always', keyboardDismissMode: 'interactive', onEndReached: onEndReached, maxToRenderPerBatch: 20, legacyImplementation: false, updateCellsBatchingPeriod: 50, removeClippedSubviews: removeClippedSubviews, viewabilityConfig: this.viewabilityConfig, getItemLayout: (_, index) => ({
                                     length: theme.CommonStyle.BTN_HEIGHT,
                                     offset: theme.CommonStyle.BTN_HEIGHT * index,
                                     index
@@ -101,7 +105,7 @@ export class ModalComponent extends React.PureComponent {
     _onClose() {
         const { onClosed, onSelected, requireSelection, selected } = this.props;
         const { selectedObject } = this.state;
-        if (requireSelection && (selectedObject && ![selectedObject.Id]) && (selected && ![selected.Id]))
+        if (requireSelection && (selectedObject && !selectedObject.Id) && (selected && !selected.Id))
             return;
         if (!requireSelection) {
             onSelected({});
@@ -183,7 +187,7 @@ export class ModalComponent extends React.PureComponent {
         });
         this._setOpen(false);
         this.clearComponent();
-        if (key && ![key.Id]) {
+        if (key && !key.Id) {
             return onSelected({});
         }
         return onSelected(key);

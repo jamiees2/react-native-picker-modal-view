@@ -7,8 +7,8 @@ import {
 } from 'react-native';
 
 // Local Imports
-import { AnimationTypeEnum } from '@Enum';
-import { IModalListInDto } from '@Interfaces';
+import { AnimationTypeEnum } from '../Enum/AnimationTypeEnum';
+import { IModalListInDto } from './IModalListInDto';
 import React from 'react';
 
 type ListType = IModalListInDto[];
@@ -35,10 +35,10 @@ export interface IModalProps {
 	autoSort?: boolean;
 	disabled: boolean;
 	requireSelection: boolean;
-	renderListItem?: (selectedItem: IModalListInDto, listItem: IModalListInDto) => JSX.Element
+	renderListItem?: (selectedItem: IModalListInDto, listItem: IModalListInDto) => React.ReactNode 
 	renderSelectView?: (disabled: boolean, selected: IModalListInDto, showModal: () => void) => React.ReactElement
 	backButtonDisabled?: boolean,
-	renderSearch?: (onClose: () => void, onBack: () => void ) =>  JSX.Element,
+	renderSearch?: (onClose: () => void, onBack: () => void ) =>  React.ReactNode,
 	theme?: string,
 	open?: boolean,
 	setOpen?: React.Dispatch<React.SetStateAction<boolean>>

@@ -1,9 +1,9 @@
 
-export { IModalProps, IModalState } from '@Interfaces/IModalProps';
-export { IModalListInDto } from '@Interfaces/IModalListInDto';
-export { IAlphabetsInDto } from '@Interfaces/IAlphabetsInDto';
-export { IListItemInDto } from '@Interfaces/IListItemInDto';
-export { ISearch } from '@Interfaces/ISearchInDto';
-export { IScrollToTop } from '@Interfaces/IScrollToTopInDto';
-export { ISelectBoxProps } from '@Interfaces/ISelectBoxInDto';
-export { ITheme } from '@Interfaces/ITheme';
+export { IModalProps, IModalState } from './IModalProps';
+export { IModalListInDto } from './IModalListInDto';
+export { IAlphabetsInDto } from './IAlphabetsInDto';
+export { IListItemInDto } from './IListItemInDto';
+export { ISearch } from './ISearchInDto';
+export { IScrollToTop } from './IScrollToTopInDto';
+export { ISelectBoxProps } from './ISelectBoxInDto';
+export { ITheme } from './ITheme';

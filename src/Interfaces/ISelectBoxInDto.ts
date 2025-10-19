@@ -1,5 +1,4 @@
-import { IModalListInDto } from '@Interfaces';
-import { ITheme } from './ITheme';
+import { IModalListInDto } from './IModalListInDto';
 
 type ListType = IModalListInDto[];
 

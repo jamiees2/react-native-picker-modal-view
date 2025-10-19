@@ -1,6 +1,5 @@
 // Global Imports
-import { ColorValue, TextInputProps } from 'react-native';
-import { ITheme } from './ITheme';
+import { TextInputProps } from 'react-native';
 
 export interface ISearch {
 	onClose: () => void;

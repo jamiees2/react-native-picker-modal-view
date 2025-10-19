@@ -1,6 +1,5 @@
 // Local Imports
-import { IModalListInDto } from '@Interfaces';
-import { ITheme } from './ITheme';
+import { IModalListInDto } from './IModalListInDto';
 
 export interface IListItemInDto {
 	list: IModalListInDto;

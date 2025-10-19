@@ -1,6 +1,5 @@
-/// <reference types="react" />
-import { IModalListInDto } from './';
-declare type ListType = IModalListInDto[];
+import { IModalListInDto } from './IModalListInDto';
+type ListType = IModalListInDto[];
 export interface ISelectBoxProps {
     selectedObject?: IModalListInDto;
     openModal: () => void;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
-import { IModalProps, IModalListInDto, IModalState } from '../Interfaces';
+import { IModalProps, IModalState } from '../Interfaces/IModalProps';
+import { IModalListInDto } from '../Interfaces/IModalListInDto';
 export declare class ModalComponent extends React.PureComponent<IModalProps, IModalState> {
     private flatListRef;
     private numToRender;
@@ -30,7 +31,7 @@ export declare class ModalComponent extends React.PureComponent<IModalProps, IMo
     private _setOpen;
     private _openModal;
     openModal(): void;
-    render(): JSX.Element;
+    render(): React.ReactNode;
     private _onViewableItemsChanged;
     private _onClose;
     onClose(): void;

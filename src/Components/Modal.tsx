@@ -2,10 +2,16 @@
 import * as React from 'react';
 import { Modal, View, FlatList, KeyboardAvoidingView, NativeSyntheticEvent, NativeScrollEvent, Platform, SafeAreaView, TouchableOpacity } from 'react-native';
 // Local Imports
-import { AlphabetComponent, ListItemComponent, SearchComponent, ScrollToTopComponent, SelectBoxComponent } from '@Components';
-import { IModalProps, IModalListInDto, IModalState, ITheme } from '@Interfaces';
-import Themes from '@Themes'
-import { generateAlphabet, getFilteredData, getIndex } from '@Helpers';
+import { AlphabetComponent } from './Alphabet';
+import { ListItemComponent } from './ListItem';
+import { SearchComponent } from './Search';
+import { ScrollToTopComponent } from './ScrollToTop';
+import { SelectBoxComponent } from './SelectBox';
+import { IModalProps, IModalState } from '../Interfaces/IModalProps';
+import { IModalListInDto } from '../Interfaces/IModalListInDto';
+import { ITheme } from '../Interfaces/ITheme';
+import Themes from '../Themes'
+import { generateAlphabet, getFilteredData, getIndex } from '../Helpers';
 export class ModalComponent extends React.PureComponent<IModalProps, IModalState> {
 
 	private flatListRef = null;
@@ -104,7 +110,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		this._openModal();
 	}
 
-	public render(): JSX.Element {
+	public render(): React.ReactNode {
 		const { autoSort, modalAnimationType, theme: themeName, showAlphabeticalIndex, keyExtractor, showToTopButton, onEndReached, removeClippedSubviews, FlatListProps, selectPlaceholderText, searchPlaceholderText, SearchInputProps, selected, disabled, items, requireSelection, renderSelectView, ModalProps, backButtonDisabled, renderSearch } = this.props;
 
 		const { modalVisible, alphabeticalIndexChars, stickyBottomButton, selectedAlpha, selectedObject, searchText } = this.state;
@@ -151,7 +157,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 							enabled>
 							<View style={theme.ModalStyles.listArea}>
 								<FlatList
-									ref={(ref) => this.flatListRef = ref}
+									ref={(ref) => { this.flatListRef = ref}}
 									keyExtractor={keyExtractor ? keyExtractor : (item, index) => index.toString()}
 									data={getFilteredData(items, autoSort, searchText)}
 									renderItem={({ item, index }) => this.renderItem(item, index)}
@@ -202,7 +208,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		const { onClosed, onSelected, requireSelection, selected } = this.props;
 		const { selectedObject } = this.state;
 
-		if (requireSelection && (selectedObject && ![selectedObject.Id]) && (selected && ![selected.Id])) return;
+		if (requireSelection && (selectedObject && !selectedObject.Id) && (selected && !selected.Id)) return;
 
 		if (!requireSelection) {
 			onSelected({} as IModalListInDto);
@@ -313,7 +319,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		this._setOpen(false);
 		this.clearComponent();
 
-		if (key && ![key.Id]) {
+		if (key && !key.Id) {
 			return onSelected({} as IModalListInDto);
 		}
 

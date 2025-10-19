@@ -1,5 +1,3 @@
-import { ITheme } from "./ITheme";
-
 export interface IModalListInDto<T = object> {
 	Id: string | number;
 	Name: string;

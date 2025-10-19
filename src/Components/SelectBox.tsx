@@ -3,11 +3,11 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
-import { ISelectBoxProps } from '@Interfaces';
-import { ThemeProps } from './ITheme';
+import { ISelectBoxProps } from '../Interfaces/ISelectBoxInDto';
+import { ThemeProps } from '../Interfaces/ITheme';
 
 export class SelectBoxComponent extends React.PureComponent<ISelectBoxProps & ThemeProps, {}> {
-	public render(): JSX.Element {
+	public render(): React.ReactNode {
 		const { openModal, selectedObject, chooseText, disabled, renderSelectView, items, theme } = this.props;
 		const selectViewIsDisabled = (disabled || !items || items.length === 0);
 		if (renderSelectView) {

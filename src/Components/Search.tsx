@@ -3,11 +3,11 @@ import * as React from 'react';
 import { View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 // Local Imports
-import { ISearch } from '@Interfaces';
-import { ThemeProps } from './ITheme';
+import { ISearch } from '../Interfaces/ISearchInDto';
+import { ThemeProps } from '../Interfaces/ITheme';
 
 export class SearchComponent extends React.PureComponent<ISearch & ThemeProps, {}> {
-	public render(): JSX.Element {
+	public render(): React.ReactNode {
 		const { SearchInputProps, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, theme } = this.props;
 		return (
 			<View style={theme.SearchStyle.searchArea}>
@@ -30,7 +30,7 @@ export class SearchComponent extends React.PureComponent<ISearch & ThemeProps, {
 			</View>
 		);
 	}
-	public touchableOpacityButton(onPress, imgSrc, buttonStyle, imgStyle): JSX.Element {
+	public touchableOpacityButton(onPress, imgSrc, buttonStyle, imgStyle): React.ReactNode {
 		return (
 			<TouchableOpacity onPress={() => onPress()} style={buttonStyle}>
 				<Image source={imgSrc} style={imgStyle} />

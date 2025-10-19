@@ -3,11 +3,11 @@ import * as React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
 // Local Import
-import { IListItemInDto } from '@Interfaces';
-import { ThemeProps } from './ITheme';
+import { IListItemInDto } from '../Interfaces/IListItemInDto';
+import { ThemeProps } from '../Interfaces/ITheme';
 
 export class ListItemComponent extends React.PureComponent<IListItemInDto & ThemeProps, {}> {
-	public render(): JSX.Element {
+	public render(): React.ReactNode {
 		const { onSelectMethod, defaultSelected, theme, list: { Name } } = this.props;
 		return (
 			<TouchableOpacity

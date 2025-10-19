@@ -1,4 +1,4 @@
-import { IModalListInDto } from '@Interfaces';
+import { IModalListInDto } from '../Interfaces/IModalListInDto';
 
 export const generateAlphabet = (items: IModalListInDto[]): Array<string> => {
 	const singularAlpha = [];
