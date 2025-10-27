@@ -1,6 +1,7 @@
 // Global Imports
 import * as React from 'react';
-import { Modal, View, FlatList, KeyboardAvoidingView, NativeSyntheticEvent, NativeScrollEvent, Platform, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Modal, View, FlatList, KeyboardAvoidingView, NativeSyntheticEvent, NativeScrollEvent, Platform, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 // Local Imports
 import { AlphabetComponent } from './Alphabet';
 import { ListItemComponent } from './ListItem';

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Modal, View, FlatList, KeyboardAvoidingView, Platform, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Modal, View, FlatList, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { AlphabetComponent } from './Alphabet';
 import { ListItemComponent } from './ListItem';
 import { SearchComponent } from './Search';

@@ -59,6 +59,7 @@
 		"react-dom": "19.1.0",
 		"react-native": "0.81.4",
 		"react-native-mock-render": "^0.1.2",
+		"react-native-safe-area-context": "^5.6.1",
 		"react-test-renderer": "19.2.0",
 		"react-testing-library": "^8.0.1",
 		"ts-jest": "^29.4.5",
@@ -70,6 +71,7 @@
 	},
 	"peerDependencies": {
 		"react": "^19.1.0",
-		"react-native": "^0.81.4"
+		"react-native": "^0.81.4",
+		"react-native-safe-area-context": "^5.6.1"
 	}
 }
